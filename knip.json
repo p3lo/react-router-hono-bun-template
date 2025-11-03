@@ -9,7 +9,18 @@
 		"react-router.config.ts",
 		"app/library/icon/Icon.tsx",
 		"app/library/link/link.tsx",
-		"app/localization/resource.ts"
+		"app/localization/resource.ts",
+		"app/lib/utils.ts"
 	],
-	"ignoreDependencies": ["@babel/preset-typescript", "babel-plugin-react-compiler", "tailwindcss"]
+	"ignoreDependencies": [
+		"@babel/preset-typescript",
+		"babel-plugin-react-compiler",
+		"tailwindcss",
+		"class-variance-authority",
+		"lucide-react",
+		"tailwindcss-animate",
+		"tw-animate-css",
+		"clsx",
+		"tailwind-merge"
+	]
 }
