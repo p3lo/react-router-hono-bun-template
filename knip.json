@@ -10,7 +10,8 @@
 		"app/library/icon/Icon.tsx",
 		"app/library/link/link.tsx",
 		"app/localization/resource.ts",
-		"app/lib/utils.ts"
+		"app/lib/utils.ts",
+		"app/components/**/*"
 	],
 	"ignoreDependencies": [
 		"@babel/preset-typescript",
