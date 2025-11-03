@@ -4,83 +4,183 @@
 <img  width="900px" height="500px" src="./public/base-stack.png" />
 </p>
 
-# Welcome to Forge 42 base-stack
+# Forge 42 Base Stack
 
-This is a base-stack for Forge 42 projects. This stack is a starting point for all Forge 42 stacks with more
-advanced features. This is an ESM Vite stack with Remix.run / React Router v7.
+A modern, production-ready base stack built by Forge 42. This stack serves as the foundation for Forge 42 projects, featuring advanced capabilities with an ESM Vite setup powered by React Router v7.
 
-It includes a basic setup for a project with react-router v7 framework mode and:
-- React 19 & react-compiler
-- TypeScript
-- TailwindCSS
-- Vite
-- Scripting
-- Biome (linter & formatter)
-- i18n support (client and server)
-- Icons spritesheet generator
-- lefthook hooks
-- CI checks for quality control
-- react-router-devtools
-- Hono server
-- .env var handling for server and client
-- SEO robots.txt, sitemap-index and sitemap built in.
+**Built on the Forge 42 base-stack architecture** - This project extends the robust Forge 42 foundation with additional optimizations and modern tooling.
 
-## Internationalization
+## 🚀 Features
 
-This stack uses i18next for internationalization. It supports both client and server side translations.
-Features included out of the box:
-- Support for multiple languages
-- Typesafe resources
-- client side translations are fetched only when needed
-- language switcher
-- language detector (uses the request to detect the language, falls back to your fallback language)
+This stack includes a comprehensive setup for React Router v7 framework mode with:
 
-## Hono server
+### Core Technologies
+- **React 19** with react-compiler support
+- **TypeScript** for type-safe development
+- **TailwindCSS v4** with shadcn/ui components
+- **Vite** for fast development and building
+- **Bun** as the primary runtime and package manager
 
-This stack uses Hono for the server. More information about Hono can be found [here](https://honojs.dev/).
-Another important thing to note is that we use a dependency called `react-router-hono-server` which is a wrapper for Hono that allows us to use Hono in our React Router application.
+### Development Tools
+- **Biome** for linting and formatting
+- **Lefthook** for Git hooks
+- **CI checks** for quality control
+- **react-router-devtools** for debugging
 
-The server comes preconfigured with:
-- i18next middleware
-- caching middleware for assets
-- easily extendable global application context
-- .env injection into context
+### Backend & Architecture
+- **Hono server** for high-performance API
+- **react-router-hono-server** integration
+- **Scripting system** with Bun runtime
+- **Icons spritesheet generator**
 
-In order to add your own middleware, extend the context, or anything along those lines, all you have to do is edit the server
-inside the `entry.server.tsx` file.
+### Internationalization
+- **i18next** for client and server-side translations
+- **Type-safe resources** with TypeScript support
+- **Language switcher** component
+- **Language detector** with fallback support
+- **Current languages**: English (en) and Slovak (sk)
 
-## .env handling
+### SEO & Utilities
+- **SEO tools**: robots.txt, sitemap-index, and dynamic sitemaps
+- **Environment variable handling** for server and client
+- **Client hints** for optimized user experience
 
-This stack parses your `.env` file and injects it into the server context. For the client side, in the `root.tsx` file, we use the `useLoaderData` hook to get the `clientEnv` from the server and set it as a global variable on the `window` called `env`.
-If you need to access the env variables in both environments, you can create a polyEnv helper like this:
+### UI Components
+- **shadcn/ui** component library
+- **Lucide React** icons
+- **Tailwind CSS animations** via tailwindcss-animate
+
+## 🌍 Internationalization
+
+This stack uses i18next for comprehensive internationalization support:
+
+- **Multiple language support** with type-safe resources
+- **Client-side translations** fetched on-demand
+- **Built-in language switcher** component
+- **Automatic language detection** from requests
+- **Fallback language** support
+
+**Adding new languages:**
+1. Create a new locale directory: `resources/locales/{lang}/`
+2. Add translation files following the existing structure
+3. Update `app/localization/resource.ts` to include the new language
+
+## 🛠 Hono Server
+
+Powered by Hono for exceptional performance. Learn more about Hono [here](https://honojs.dev/).
+
+The server includes:
+- **i18next middleware** for internationalization
+- **Caching middleware** for static assets
+- **Global application context** for shared state
+- **Environment variable injection**
+
+Extend server functionality by modifying `entry.server.tsx`.
+
+## 🔧 Environment Variables
+
+The stack handles environment variables seamlessly:
+
+- **Server-side**: Available via `process.env`
+- **Client-side**: Injected and available via `window.env`
+- **Type safety**: Full TypeScript support
+
+Create a polyfill helper for cross-environment usage:
 ```ts
 // app/utils/env.ts
-// This will return the process.env on the server and window.env on the client
 export const polyEnv = typeof process !== "undefined" ? process.env : window.env;
 ```
-The server will fail at runtime if you don't set your `.env` file properly.
 
-## Getting started
+## 📦 Package Manager
 
-1. Fork the repository
+This stack uses **Bun** as the primary package manager and runtime:
 
-2. Install the dependencies:
+- **Faster installs** compared to npm/pnpm
+- **Built-in bundler** and test runner
+- **TypeScript support** out of the box
+- **Reducuced dependencies** and better performance
+
+## 🚀 Getting Started
+
+### Prerequisites
+- **Node.js** >= 24.3.0
+- **Bun** >= 1.3.0
+
+### Installation
+
+1. **Fork the repository**
+
+2. **Install dependencies**:
 ```bash
-pnpm install
+bun install
 ```
-3. Read through the README.md files in the project to understand our decisions.
 
-4. Run the cleanup script:
+3. **Review the documentation**:
+   Read through the README.md files in the project to understand the architecture and decisions.
+
+4. **Run the cleanup script**:
 ```bash
-pnpm cleanup
+bun run cleanup
 ```
+This removes base-stack specific files and configurations. The script will remove itself from package.json after completion.
 
-This will remove everything in the project related to the base-stack like README.md etc.
-This is the first thing you should run after initializing the project.
-After it is run it will remove itself from the package.json.
-
-5. Start the development server:
+5. **Start development server**:
 ```bash
-pnpm run dev
+bun run dev
 ```
-6. Happy coding!
+
+6. **Begin building!** 🎉
+
+## 📋 Available Scripts
+
+```bash
+# Development
+bun run dev          # Start development server
+bun run build        # Build for production
+bun run start        # Start production server (uses Node.js)
+
+# Code Quality
+bun run check        # Run Biome linter
+bun run check:fix    # Auto-fix linting issues
+bun run typecheck    # Run TypeScript compiler
+bun run validate     # Run all checks (lint + typecheck + unused)
+
+# Utilities
+bun run script <file>    # Execute a script from the scripts/ directory
+bun run cleanup          # Clean up base-stack files
+```
+
+## 🏗 Project Structure
+
+```
+├── app/
+│   ├── library/           # Reusable components and utilities
+│   ├── localization/     # i18n configuration and resources
+│   ├── routes/           # Application routes
+│   ├── server/           # Server configuration
+│   └── services/         # External service integrations
+├── resources/
+│   └── locales/         # Translation files (en, sk)
+├── scripts/             # Utility scripts
+└── public/              # Static assets
+```
+
+## 🧪 Testing
+
+This stack focuses on essential tooling without a testing framework by default. You can add your preferred testing solution (Vitest, Jest, etc.) as needed.
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🔗 Links
+
+- [React Router Documentation](https://reactrouter.com/)
+- [Hono Documentation](https://honojs.dev/)
+- [TailwindCSS Documentation](https://tailwindcss.com/)
+- [Bun Documentation](https://bun.sh/)
+- [shadcn/ui Documentation](https://ui.shadcn.com/)
+
+---
+
+**Built with ❤️ by Forge 42**
