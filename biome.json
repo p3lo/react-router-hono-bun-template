@@ -1,7 +1,7 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"includes": ["**", "!**/app/library/icon/**/*"]
+		"includes": ["**", "!**/app/library/icon/**/*", "!**/app/tailwind.css"]
 	},
 	"vcs": {
 		"enabled": true,
@@ -13,37 +13,25 @@
 		"enabled": true,
 		"lineWidth": 120
 	},
-	"assist": {
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true,
 			"suspicious": {
 				"recommended": true,
-				"noConsole": "error"
+				"noConsole": "off",
+				"noDocumentCookie": "off",
+				"noMisleadingCharacterClass": "off",
+				"noArrayIndexKey": "off"
 			},
 			"style": {
 				"recommended": true,
-				"noParameterAssign": "error",
-				"useAsConstAssertion": "error",
-				"useDefaultParameterLast": "error",
-				"useEnumInitializers": "error",
-				"useSelfClosingElements": "error",
-				"useSingleVarDeclarator": "error",
-				"noUnusedTemplateLiteral": "error",
-				"useNumberNamespace": "error",
-				"noInferrableTypes": "error",
-				"noUselessElse": "error",
-				"noProcessEnv": "error"
+				"noNonNullAssertion": "off"
 			},
 			"complexity": {
-				"recommended": true
+				"recommended": true,
+				"useLiteralKeys": "off"
 			},
 			"security": {
 				"recommended": true
@@ -56,14 +44,15 @@
 				"noUnusedImports": "error",
 				"noUnusedVariables": "error",
 				"noUnusedLabels": "error",
-				"noUnusedFunctionParameters": "error"
+				"noUnusedFunctionParameters": "error",
+				"noNestedComponentDefinitions": "off",
+				"useUniqueElementIds": "off"
 			},
 			"a11y": {
-				"recommended": true
+				"recommended": false
 			},
 			"nursery": {
 				"recommended": true,
-				"noFloatingPromises": "error",
 				"useSortedClasses": {
 					"level": "error",
 					"fix": "safe",
@@ -72,6 +61,17 @@
 					}
 				}
 			}
+		}
+	},
+	"css": {
+		"parser": {
+			"allowWrongLineComments": true
+		},
+		"linter": {
+			"enabled": true
+		},
+		"formatter": {
+			"enabled": true
 		}
 	},
 	"javascript": {

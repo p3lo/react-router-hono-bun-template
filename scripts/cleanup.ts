@@ -18,13 +18,20 @@ const removeAllReadmeFromApp = async (currentDirectory: string) => {
 	}
 }
 
-// biome-ignore lint/suspicious/noConsole: We want to log to the console here
 const log = (message: string) => console.log(chalk.green(message))
 
 const removeTheCleanupFromPackageJsonAndScripts = async () => {
 	const packageJson = JSON.parse(await fs.readFile("package.json", { encoding: "utf-8" }))
 	packageJson.scripts.cleanup = undefined
 	packageJson.scripts.postinstall = undefined
+	// Remove test-related scripts
+	delete packageJson.scripts.test
+	delete packageJson.scripts["test:ui"]
+	delete packageJson.scripts["test:cov"]
+	// Update validate script to remove test reference
+	if (packageJson.scripts.validate) {
+		packageJson.scripts.validate = packageJson.scripts.validate.replace(/ && .*?test && /, " && ")
+	}
 
 	await fs.writeFile("package.json", JSON.stringify(packageJson, null, 2), "utf-8")
 

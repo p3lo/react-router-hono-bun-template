@@ -14,7 +14,6 @@ It includes a basic setup for a project with react-router v7 framework mode and:
 - TypeScript
 - TailwindCSS
 - Vite
-- Vitest (unit tests)
 - Scripting
 - Biome (linter & formatter)
 - i18n support (client and server)

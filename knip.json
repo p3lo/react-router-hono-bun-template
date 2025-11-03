@@ -1,9 +1,15 @@
 {
 	"$schema": "https://unpkg.com/knip@5/schema.json",
-	"entry": ["scripts/*.{ts,js}", "app/routes.ts", "app/server/*.ts", "app/library/icon/Icon.tsx"],
-	"remix": true,
+	"entry": ["scripts/*.{ts,js}", "app/routes.ts", "app/server/*.ts"],
 	"lefthook": true,
+	"remix": true,
 	"project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
-	"ignore": ["app/library/icon/icons/types.ts", "react-router.config.ts"],
+	"ignore": [
+		"app/library/icon/icons/types.ts",
+		"react-router.config.ts",
+		"app/library/icon/Icon.tsx",
+		"app/library/link/link.tsx",
+		"app/localization/resource.ts"
+	],
 	"ignoreDependencies": ["@babel/preset-typescript", "babel-plugin-react-compiler", "tailwindcss"]
 }
