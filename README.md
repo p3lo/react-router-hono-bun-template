@@ -137,7 +137,7 @@ bun run dev
 # Development
 bun run dev          # Start development server
 bun run build        # Build for production
-bun run start        # Start production server (uses Node.js)
+bun run start        # Start production server
 
 # Code Quality
 bun run check        # Run Biome linter
