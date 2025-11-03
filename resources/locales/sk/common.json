@@ -1,0 +1,25 @@
+{
+	"hi": "React Router je úžasný!",
+	"navigation": {
+		"back": "Späť",
+		"home": "Späť na domovskú stránku"
+	},
+	"error": {
+		"500": {
+			"title": "Niečo sa pokazilo!",
+			"description": "Zdá sa, že na serveri sa stalo neočakávané."
+		},
+		"404": {
+			"title": "Stránka nebola nájdená!",
+			"description": "Ups! Zdá sa, že stránka, ktorú hľadáte, sa vyparila do vzduchu."
+		},
+		"403": {
+			"title": "Neoprávnený prístup!",
+			"description": "Zdá sa, že nemáte prístup na túto stránku."
+		},
+		"200": {
+			"title": "Niečo sa pokazilo!",
+			"description": "Zdá sa, že na serveri sa stalo neočakávané."
+		}
+	}
+}

@@ -10,7 +10,7 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
 			lastmod: "2024-07-17",
 		},
 		{
-			url: `${domain}/sitemap/bs.xml`,
+			url: `${domain}/sitemap/sk.xml`,
 			lastmod: "2024-07-17",
 		},
 	])
