@@ -1,9 +1,3 @@
-
-
-<p align="middle">
-<img  width="900px" height="500px" src="./public/base-stack.png" />
-</p>
-
 # React Router Hono Bun Template
 
 A modern, production-ready template optimized for Bun runtime. This project is **based on the Forge 42 base-stack** but significantly enhanced and modified for optimal performance with Bun.
