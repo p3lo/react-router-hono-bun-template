@@ -4,11 +4,20 @@
 <img  width="900px" height="500px" src="./public/base-stack.png" />
 </p>
 
-# Forge 42 Base Stack
+# React Router Hono Bun Template
 
-A modern, production-ready base stack built by Forge 42. This stack serves as the foundation for Forge 42 projects, featuring advanced capabilities with an ESM Vite setup powered by React Router v7.
+A modern, production-ready template optimized for Bun runtime. This project is **based on the Forge 42 base-stack** but significantly enhanced and modified for optimal performance with Bun.
 
-**Built on the Forge 42 base-stack architecture** - This project extends the robust Forge 42 foundation with additional optimizations and modern tooling.
+## 🎯 What This Is
+
+**This is NOT the official Forge 42 stack** - it's a customized fork that builds upon Forge 42's solid foundation with these key improvements:
+- ✅ **Bun runtime optimization** - faster installs, built-in TypeScript, reduced dependencies
+- ✅ **Modern server architecture** - dynamic adapter switching (Node/Bun)
+- ✅ **Enhanced UI components** - shadcn/ui integration
+- ✅ **Slovak localization** - updated from Bosnian
+- ✅ **Streamlined dependencies** - removed unused packages and npm configurations
+
+Perfect for developers who want the reliability of Forge 42 architecture with modern Bun performance benefits.
 
 ## 🚀 Features
 
@@ -183,4 +192,14 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Built with ❤️ by Forge 42**
+## 🙏 Acknowledgments
+
+**Based on Forge 42 base-stack** - This template builds upon the excellent foundation provided by Forge 42, with significant optimizations for Bun runtime and modern development workflows.
+
+**Original Forge 42 work**: https://github.com/forge-42/base-stack
+
+**Enhanced and optimized for Bun** by [p3lo](https://github.com/p3lo)
+
+---
+
+**Built with ❤️ based on Forge 42 architecture**

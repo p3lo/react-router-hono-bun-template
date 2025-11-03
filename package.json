@@ -1,7 +1,8 @@
 {
-	"name": "@forge42/base-stack",
+	"name": "@p3lo/react-router-hono-bun-template",
 	"version": "0.0.1",
-	"author": "forge-42",
+	"author": "p3lo",
+	"description": "Modern React Router v7 template with Hono server and Bun runtime. Based on Forge 42 base-stack with significant optimizations.",
 	"private": true,
 	"sideEffects": false,
 	"license": "MIT",
