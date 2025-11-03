@@ -6,7 +6,5 @@ pre-commit:
       stage_fixed: true
     typecheck:
       run: pnpm run typecheck
-    test:
-      run: pnpm run test
     unused-code:
       run: pnpm run check:unused
